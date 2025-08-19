@@ -2,6 +2,8 @@
 
 Uma plataforma moderna para organizar e encontrar materiais de estudo, desenvolvida em HTML, CSS e JavaScript puro.
 
+## 📁 Estrutura do projeto
+
 \`\`\`
 saber-plus/
 ├── index.html          # Página inicial
@@ -14,6 +16,7 @@ saber-plus/
 ├── admin.js            # JavaScript do admin
 └── README.md           # Este arquivo
 \`\`\`
+
 
 ## 🔑 Acesso ao Admin
 
