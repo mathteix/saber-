@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Materiais - Saber+</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <a href="index.html" class="btn-back">
+                            <i class="fas fa-arrow-left"></i>
+                            Voltar
+                        </a>
+                        <div class="logo-section">
+                            <div class="logo-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="logo-text">
+                                <h1>Consultar Materiais</h1>
+                                <p>
+                                    <i class="fas fa-hdd"></i>
+                                    Dados salvos localmente
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <button id="refresh-btn" class="btn btn-outline">Atualizar</button>
+                        <a href="cadastro.html" class="btn btn-primary">Cadastrar Novo</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container main-content">
+            <!-- Filtros -->
+            <div class="filters-card">
+                <div class="filters-header">
+                    <h3><i class="fas fa-search"></i> Filtros de Busca</h3>
+                    <p>Use os filtros abaixo para encontrar materiais específicos</p>
+                    <span class="storage-info">💾 Dados persistem localmente mesmo após atualizar a página</span>
+                </div>
+                <div class="filters-content">
+                    <div class="filters-grid">
+                        <div class="form-group">
+                            <label for="search">Buscar</label>
+                            <input type="text" id="search" placeholder="Título, autor, descrição...">
+                        </div>
+                        <div class="form-group">
+                            <label for="filter-categoria">Categoria</label>
+                            <select id="filter-categoria">
+                                <option value="">Todas as categorias</option>
+                                <option value="Matemática">Matemática</option>
+                                <option value="Português">Português</option>
+                                <option value="Ciências">Ciências</option>
+                                <option value="História">História</option>
+                                <option value="Geografia">Geografia</option>
+                                <option value="Física">Física</option>
+                                <option value="Química">Química</option>
+                                <option value="Inglês">Inglês</option>
+                                <option value="Educação Física">Educação Física</option>
+                                <option value="Arte">Arte</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filter-tipo">Tipo de Material</label>
+                            <select id="filter-tipo">
+                                <option value="">Todos os tipos</option>
+                                <option value="livro">Livro</option>
+                                <option value="apostila">Apostila</option>
+                                <option value="video">Vídeo</option>
+                                <option value="apresentacao">Apresentação</option>
+                                <option value="exercicios">Exercícios</option>
+                                <option value="artigo">Artigo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filter-nivel">Nível de Ensino</label>
+                            <select id="filter-nivel">
+                                <option value="">Todos os níveis</option>
+                                <option value="infantil">Infantil</option>
+                                <option value="fundamental">Fundamental</option>
+                                <option value="medio">Médio</option>
+                                <option value="superior">Superior</option>
+                                <option value="tecnico">Técnico</option>
+                                <option value="pos-graduacao">Pós-graduação</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filters-footer">
+                        <p id="results-count">0 material(is) encontrado(s) 📱 Local</p>
+                        <button id="clear-filters" class="btn btn-outline">Limpar Filtros</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading-card" style="display: none;">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    Carregando materiais...
+                </div>
+            </div>
+
+            <!-- Resultados -->
+            <div id="results-container">
+                <!-- Materiais serão inseridos aqui via JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <i class="fas fa-book-open"></i>
+                <h3>Nenhum material encontrado</h3>
+                <p>Não há materiais cadastrados. Cadastre o primeiro material!</p>
+                <a href="cadastro.html" class="btn btn-primary">Cadastrar Primeiro Material</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="consulta.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Saber+</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient">
+        <!-- Login Screen -->
+        <div id="login-screen" class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="login-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2>Área Restrita</h2>
+                    <p>Acesso apenas para administradores</p>
+                </div>
+                <div class="login-content">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="password">Senha de Administrador</label>
+                            <div class="password-input">
+                                <input type="password" id="password" placeholder="Digite a senha..." required>
+                                <button type="button" id="toggle-password" class="password-toggle">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="login-actions">
+                            <a href="index.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-left"></i>
+                                Voltar
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-shield-alt"></i>
+                                Entrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="admin-panel" style="display: none;">
+            <!-- Header -->
+            <header class="header">
+                <div class="container">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <a href="index.html" class="btn-back">
+                                <i class="fas fa-arrow-left"></i>
+                                Voltar
+                            </a>
+                            <div class="logo-section">
+                                <div class="logo-icon bg-red">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="logo-text">
+                                    <h1>Painel Admin</h1>
+                                    <p>Gerenciar materiais</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="logout-btn" class="btn btn-outline">Sair</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="container main-content">
+                <div class="admin-info-card">
+                    <div class="admin-info-header">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Gerenciamento de Materiais</h3>
+                        <p>Visualize e exclua materiais didáticos da plataforma</p>
+                    </div>
+                    <div class="admin-info-content">
+                        <div class="admin-stats">
+                            <p>Total de materiais: <span id="total-materials" class="stat-highlight">0</span></p>
+                            <button id="refresh-materials" class="btn btn-primary">Atualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div id="admin-loading" class="loading-card" style="display: none;">
+                    <div class="loading-content">
+                        <div class="spinner"></div>
+                        Carregando materiais...
+                    </div>
+                </div>
+
+                <!-- Materials List -->
+                <div id="materials-list">
+                    <!-- Materiais serão inseridos aqui via JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="admin-empty-state" class="empty-state" style="display: none;">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Nenhum material encontrado</h3>
+                    <p>Não há materiais cadastrados no sistema.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Confirmar Exclusão</h3>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir este material?</p>
+                <p><strong id="delete-material-title"></strong></p>
+                <p class="warning-text">Esta ação não pode ser desfeita!</p>
+            </div>
+            <div class="modal-actions">
+                <button id="cancel-delete" class="btn btn-outline">Cancelar</button>
+                <button id="confirm-delete" class="btn btn-danger">
+                    <i class="fas fa-trash"></i>
+                    Excluir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
