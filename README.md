@@ -2,22 +2,6 @@
 
 Uma plataforma moderna para organizar e encontrar materiais de estudo, desenvolvida em HTML, CSS e JavaScript puro.
 
-## 📁 Estrutura do projeto
-
-\`\`\`
-saber-plus/
-├── index.html          # Página inicial
-├── cadastro.html       # Página de cadastro de materiais
-├── consulta.html       # Página de consulta/busca
-├── admin.html          # Painel administrativo
-├── styles.css          # Estilos CSS
-├── cadastro.js         # JavaScript do cadastro
-├── consulta.js         # JavaScript da consulta
-├── admin.js            # JavaScript do admin
-└── README.md           # Este arquivo
-\`\`\`
-
-
 ## 🔑 Acesso ao Admin
 
 - URL: `/admin.html`
