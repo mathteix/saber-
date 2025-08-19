@@ -1,4 +1,4 @@
-# Saber+ - Plataforma de Materiais Didáticos
+# Saber+ | Plataforma de Materiais Didáticos
 
 Uma plataforma moderna para organizar e encontrar materiais de estudo, desenvolvida em HTML, CSS e JavaScript puro.
 
